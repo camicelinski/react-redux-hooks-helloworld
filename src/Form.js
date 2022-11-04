@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { setCounterAction } from './actions/counter';
 
 const Form = () => {
-    const counter = useSelector(state => state.counter);
+    const counter = useSelector(state => state.counter.counter);
     const [inputCounter, setInputCounter] = useState(counter);
   
     const dispatch = useDispatch();

@@ -1,21 +1,11 @@
-const initState = {
-    counter: 0,
-};
+import { combineReducers } from "redux";
 
-const reducer = (state = initState, action) => {
-    switch(action.type) {
-        case 'increaseCounter':
-            const { step } = action.payload;
-            return {
-                counter: state.counter + step,
-            };
-        case 'setCounter':
-            return {
-                counter: action.payload.value,
-            };
-        default: 
-            return state;
-    }
-}
+import counterReducer from './counter';
+import ipReducer from './ip';
 
-export default reducer;
+const reducers = combineReducers({
+  counter: counterReducer,
+  ip: ipReducer
+})
+
+export default reducers

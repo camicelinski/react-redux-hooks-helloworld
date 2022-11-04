@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { increaseCounterAction } from './actions/counter';
 
 import Form from './Form'
+import Logs from './Logs';
 
 class App extends React.Component {
     handleIncrease = event => {
@@ -20,6 +21,7 @@ class App extends React.Component {
                     increase
                 </button>
                 <Form />
+                <Logs />
             </section>
         );
     }
@@ -27,7 +29,7 @@ class App extends React.Component {
 // ...
 const mapStateToProps = (state, props) => {
     return {
-        counter: state.counter,
+        counter: state.counter.counter,
     }
 }
 
